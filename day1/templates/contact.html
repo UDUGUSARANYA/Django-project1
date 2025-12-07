@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #1a73e8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 40px;
+            color: white;
+        }
+
+        .navbar .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffea00;
+        }
+
+        /* Contact Container */
+        .contact-container {
+            max-width: 850px;
+            background: white;
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-container h1 {
+            text-align: center;
+            color: #333;
+            font-size: 32px;
+        }
+
+        .contact-container p {
+            text-align: center;
+            color: #666;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        /* Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #444;
+        }
+
+        input, textarea {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #1a73e8;
+            outline: none;
+            box-shadow: 0 0 5px #1a73e8;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 130px;
+        }
+
+        .btn {
+            background: #1a73e8;
+            color: white;
+            padding: 14px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background: #155bb5;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #1a73e8;
+            color: white;
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">MyWebsite</div>
+
+        <div class="nav-links">
+            <a href="\home">Home</a>
+            <a href="\about">About</a>
+            <a href="\contact">Contact</a>
+            <a href="\login">Login</a>
+            <a href="\register">Register</a>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-container">
+        <h1>Contact Us</h1>
+        <p>Have questions? Feel free to reach out using the form below.</p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label>Your Name</label>
+            <input type="text" name="name" placeholder="Enter your name" required>
+
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="Enter your email" required>
+
+            <label>Message</label>
+            <textarea name="message" placeholder="Write your message..." required></textarea>
+
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2025 MyWebsite. All Rights Reserved.
+    </div>
+
+</body>
+</html>
